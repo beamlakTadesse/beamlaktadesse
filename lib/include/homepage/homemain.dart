@@ -19,7 +19,7 @@ import 'package:DeveloperFolio/pages/welcome.dart';
 import 'package:flutter/material.dart';
 
 class HomeDesktop extends StatefulWidget {
-  const HomeDesktop({Key key}) : super(key: key);
+  const HomeDesktop({Key? key}) : super(key: key);
 
   @override
   _HomeDesktopState createState() => _HomeDesktopState();
@@ -46,16 +46,15 @@ class _HomeDesktopState extends State<HomeDesktop> {
       child: Scrollbar(
         controller: _controller,
         child: SingleChildScrollView(
+          controller: _controller,
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
               Flexible(
-                          child: ListView(
+                child: ListView(
                   physics: NeverScrollableScrollPhysics(),
                   shrinkWrap: true,
-
                   children: [
-                     
                     Row(
                       children: <Widget>[
                         Expanded(child: WelcomePage()),
@@ -91,35 +90,38 @@ class _HomeDesktopState extends State<HomeDesktop> {
                     SizedBox(
                       height: 75,
                     ),
+                    // Row(
+                    //   children: [
+                    //     Expanded(child: AchievementDesk()),
+                    //   ],
+                    // ),
+                    // SizedBox(
+                    //   height: 75,
+                    // ),
+                    // Row(
+                    //   children: [
+                    //     Expanded(child: BlogCenterDesk()),
+                    //   ],
+                    // ),
+                    // SizedBox(
+                    //   height: 75,
+                    // ),
                     Row(
-                      children: [
-                        Expanded(child: AchievementDesk()),
-                      ],
-                    ),
-                     SizedBox(
-                      height: 75,
-                    ),
-                    Row(
-                      children: [
-                        Expanded(child: BlogCenterDesk()),
-                      ],
-                    ),
-                     SizedBox(
-                      height: 75,
-                    ),
-                     Row(
                       children: [
                         Expanded(child: ContactCenterDesk()),
-                        Expanded(child: FourDesk(),),
+                        Expanded(
+                          child: FourDesk(),
+                        ),
                       ],
                     ),
-                    SizedBox(height: 100,),
+                    SizedBox(
+                      height: 100,
+                    ),
                     Row(
                       children: [
                         Expanded(child: FooterPage()),
                       ],
                     ),
-                    
                   ],
                 ),
               ),
@@ -140,7 +142,7 @@ class HomeMobile extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Flexible(
-                  child: ListView(
+            child: ListView(
               shrinkWrap: true,
               physics: NeverScrollableScrollPhysics(),
               children: <Widget>[
@@ -152,7 +154,9 @@ class HomeMobile extends StatelessWidget {
                 AchievementMob(),
                 BlogCenterMob(),
                 ContactCenterMob(),
-                SizedBox(height: 50,),
+                SizedBox(
+                  height: 50,
+                ),
                 FooterPage()
               ],
             ),
@@ -172,9 +176,9 @@ class HomeTab extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Flexible(
-                  child: ListView(   
-                    shrinkWrap: true,     
-                    physics: NeverScrollableScrollPhysics(),
+            child: ListView(
+              shrinkWrap: true,
+              physics: NeverScrollableScrollPhysics(),
               children: <Widget>[
                 WelcomePageTab(),
                 OneTab(),
@@ -184,7 +188,9 @@ class HomeTab extends StatelessWidget {
                 AchievementTab(),
                 BlogCenterTab(),
                 ContactCenterTab(),
-                SizedBox(height: 50,),
+                SizedBox(
+                  height: 50,
+                ),
                 FooterMob(),
               ],
             ),
